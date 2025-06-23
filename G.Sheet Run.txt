@@ -1,0 +1,21 @@
+function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getActiveSheet();
+
+  var firstName = e.parameter.firstName;
+  var lastName = e.parameter.lastName;
+  var location = e.parameter.location;
+  var birthday = e.parameter.birthday;
+  var timestamp = new Date();
+
+  sheet.appendRow([firstName, lastName, location, birthday, timestamp]);
+
+  return ContentService.createTextOutput("Success: Data received and added to the sheet");
+}
+
+
+First Name
+Last Name
+Location
+Birthday
+F/R Time
