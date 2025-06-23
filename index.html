@@ -1,105 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maintenance Page</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    html {
-      height: 100%;
-     /* Replace this: background-color: #d000f7; */
-      background: linear-gradient(-45deg, #ff00cc, #3333ff, #00ffcc,#ffcc00,#66ff66,#ffb347);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    body {
-      height: 100%;
-      font-family: 'Arial Black', sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    @keyframes gradientBG {
-    0% {
-    background-position: 0% 50%;
-    }
-    50% {
-    background-position: 100% 50%;
-   }
-   100% {
-    background-position: 0% 50%;
-   }
-    }
-
-    .main-box {
-      border: 4px solid black;
-      padding: 30px;
-      text-align: center;
-      max-width: 90%;
-      border-radius: 10px;
-    }
-    .countdown {
-      background: white;
-      color: #00aaff;
-      font-size: 24px;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    .footer {
-      margin-top: 40px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="main-box">
-    <h1>This Website will be Maintained and Bug fixed</h1><br>
-    <h4>Release date with This Website</h4>
-    <div class="countdown" id="countdown">
-      Loading...
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>X.N.O.R Website V1.6</title>
+  </head>
+  <body>
+    <header class="header">
+    	<div class="header__socials">
+        <a href="https://youtube.com/@x.nor10"><i class="ri-youtube-fill"></i></a>
+        <a href="https://www.facebook.com/xnor.gg"><i class="ri-facebook-box-fill"></i></a>
+        <a href="https://www.instagram.com/xnor.gg"><i class="ri-instagram-line"></i></a>
+        <a href="https://www.tiktok.com/@x.nor10t"><i class="ri-tiktok-fill"></i></a>
+        <a href="https://wa.me/message/WAZOHU6F4E3AN1"><i class=" ri-whatsapp-line"></i></a>
+      </div>
+      <nav>
+        <div class="nav__bar">
+          <div class="nav__header">
+            <div class="nav__logo">
+              <a href="#">X.N.O.R Website</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+              <span><i class="ri-menu-3-line"></i></span>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li class="link"><a href="#home">Home</a></li>
+            <li class="link"><a href="#about">About</a></li>
+            <li class="link"><a href="#project">Video</a></li>
+            <li class="link"><a href="#service">Services</a></li>
+            <li class="link"><a href="#blog">Application</a></li>
+            <li class="link btn"><a href="REG/index.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+   <div class="section__container header__container" id="home">
+        <div class="header__image-wrapper">
+  <div class="header__image">
+    <img src="assets/header.png" alt="header" />
   </div>
+</div>
+        <div class="header__content">
+          <h1>Hey Web User</h1>
+          <p>
+           Welcome to the X.N.O.R Website. I created this website to promote My Social Media Accounts, Videos and increase My Followers. Study the Information on the Website. Be sure to fill in your details by going to Contact Us.
+          </p>      
+          <div class="about__btns">
+          <a class="btn" href="https://youtube.com/@x.nor10"><i class="ri-youtube-fill"></i></a>
+          <a class="btn" href="https://www.facebook.com/xnor.gg"><i class="ri-facebook-box-fill"></i></a>
+          <a class="btn" href="https://www.instagram.com/xnor.gg"><i class="ri-instagram-line"></i></a>
+          <a class="btn" href="https://www.tiktok.com/@x.nor10t"><i class="ri-tiktok-fill"></i></a>
+          <a class="btn" href="https://wa.me/message/WAZOHU6F4E3AN1"><i class=" ri-whatsapp-line"></i></a>
+          </div>
+          <br>
+          <a class="link btn" href="REG/index.html">Contact</a>
+        </div>
+      </div>
+    </header>
+    
+    <section class="section__container banner__container">
+      <div class="banner__card">
+        <span><i class="ri-gamepad-line"></i></span>
+        <div>
+          <h4>Gaming</h4>
+          <p>
+            I have created a gaming YouTube channel. It is the first YouTube channel I created. I have uploaded Call of Duty Mobile Gameplay & Short Video Tutorial on it. Go check it out on My Gaming Channel
+          </p><br><br>
+          	<a class="link btn" href="https://youtube.com/@x.nor10">Go Channel</a>
+           </div>
+        </div>
+      </div>
+      <div class="banner__card">
+        <span><i class="ri-book-3-line"></i></span>
+        <div>
+          <h4>Education</h4>
+          <p>
+            I make videos on ICT, Cording Education and everything on this Education Channel. I created this Channel to promote the Gaming Channel I mentioned above. Go check out My Education Channel
+          </p><br><br><br>
+          <a class="link btn" href="https://youtube.com/@x.nor11">Go Channel</a>
+        </div>
+      </div>
+      <div class="banner__card">
+        <span><i class="ri-music-2-line"></i></span>
+        <div>
+          <h4>Music</h4>
+          <p>
+            I am making Phonk,Slowed & Reverbs, Sinhala-English Songs Collection Music Videos on this Music Channel. I also made this Channel to promote the Gaming Channel I mentioned above. Go check out My Music Channel. Listen to the songs and have fun
+          </p><br>
+          <a class="link btn" href="https://youtube.com/@x.nor12">Go Channel</a>
+        </div>
+      </div>
+    </section>
 
-  <div class="footer">Website is Designed by X.N.O.R 2026</div>
+    <section class="section__container project__container" id="project">
+      <div class="project__header">
+        <h2 class="section__header">My YouTube Videos</h2>
+        <div class="project__nav">
+          <button
+            class="btn project__btn mixitup-control-active"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button class="btn project__btn" data-filter=".game">Gaming</button>
+          <button class="btn project__btn" data-filter=".edu">Education</button>
+          <button class="btn project__btn" data-filter=".mu">Music</button>
+        </div>
+      </div>
+      <div class="project__grid">
+      	<div class="project__card mix mu">
+          <iframe src="https://www.youtube.com/embed/2wglFEF5c4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+      <div class="project__card mix mu">
+          <iframe src="https://www.youtube.com/embed/-YC0DRNnaOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix mu">
+          <iframe src="https://www.youtube.com/embed/miR5YgajFb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix game">
+          <iframe src="https://www.youtube.com/embed/HVO2JC_LDOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project"></iframe>
+        </div>
+        <div class="project__card mix mu">
+          <iframe src="https://www.youtube.com/embed/gESyjO1OYD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix game">
+          <iframe src="https://www.youtube.com/embed/pGMd9dhxQ3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix edu">
+          <iframe src="https://www.youtube.com/embed/jysVTmhO1OY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix mu">
+          <iframe src="https://www.youtube.com/embed/01id9AN5hns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix game">
+          <iframe src="https://www.youtube.com/embed/A1CrhZAQEOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+        <div class="project__card mix mu">
+          <iframe src="https://www.youtube.com/embed/PffsAjwTU1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="project" ></iframe>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    const targetDate = new Date("2026-01-01T00:00:00");
+   <!-- <section class="section__container about__container" id="about">
+      <div class="about__image-wrapper">
+  <div class="about__image">
+    <img src="assets/about.jpg" alt="about" />
+  </div>
+</div>
+      <div class="about__content">
+        <h2 class="section__header">About</h2>
+        <p></p>
+        <h4>
+          My Name is X.N.O.R. I am 19 years old.I have created three YouTube Channels: Gaming/Education/Music.My goal is to get One million Subscribers on all three YouTube Channels.I need your support.
+        </h4>
+      </div>
+  </section> -->
+ 
+ <section class="section__container service__container" id="service">
+      <p class="section__subheader">Our Services</p>
+      <h2 class="section__header">What We Do?</h2>
+      <p class="section__description">
+        We specialize in a wide range of web development services designed to
+        transform your vision into reality.
+      </p>
+      <div class="service__grid">
+        <div class="service__card">
+          <span><i class="ri-window-fill"></i></span>
+          <h4>Website Design</h4>
+          <p>
+            We craft user-friendly interfaces that engage Go Channelors and help you
+            achieve your online goals with minimum efforts.
+          </p>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-android-line"></i></span>
+          <h4>Android Application Create</h4>
+          <p>
+            We build secure, scalable, and user-centric online stores that
+            enhance the shopping experience and drive conversions.
+          </p>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-smartphone-line"></i></span>
+          <h4>Mobile & Computer Repair</h4>
+          <p>
+            From iOS to Android, we create apps that deliver seamless
+            performance and keep users coming back for more.
+          </p>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-smartphone-line"></i></span>
+          <h4>Mobile & Computer Repair</h4>
+          <p>
+            From iOS to Android, we create apps that deliver seamless
+            performance and keep users coming back for more.
+          </p>
+        </div><div class="service__card">
+          <span><i class="ri-smartphone-line"></i></span>
+          <h4>Mobile & Computer Repair</h4>
+          <p>
+            From iOS to Android, we create apps that deliver seamless
+            performance and keep users coming back for more.
+          </p>
+        </div>
 
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
+      </div>
+    </section>
 
-      if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "0 days 0 hours 0 minutes 0 seconds";
-        return;
-      }
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h5><a href="#">X.N.O.R</a></h5>
+          <p>
+            I'm a dedicated web developer with a creative flair and a penchant
+            for turning lines of code into captivating online experiences.
+          </p>
+          <div class="footer__socials">
+            <a href="https://youtube.com/@x.nor10"><i class="ri-youtube-fill"></i></a>
+            <a href="https://www.facebook.com/xnor.gg"><i class="ri-facebook-box-fill"></i></a>
+            <a href="https://www.instagram.com/xnor.gg"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.tiktok.com/@x.nor10t"><i class="ri-tiktok-fill"></i></a>
+            <a href="https://wa.me/message/WAZOHU6F4E3AN1"><i class=" ri-whatsapp-line"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>My Services</h4>
+          <div class="footer__links">
+            <a href="#">Website Design</a>
+            <a href="#">Android Application Create</a>
+            <a href="#">Mobile & Computer Repair</a>
+          </div>
+        </div>
+        <!-- <div class="footer__col">
+          <h4>Support</h4>
+          <div class="footer__links">
+            <a href="#contact">Contact</a>
+            <a href="#blog">My Blog</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div> -->
+      </div>
+      <div class="footer__bar">
+        Web Design By X.N.O.R 2025/Enjoy Watching with the Website<br>
+      </div>
+    </footer>
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("countdown").innerHTML =
-        `${days}D ${hours}H ${minutes}Min ${seconds}Sec`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
