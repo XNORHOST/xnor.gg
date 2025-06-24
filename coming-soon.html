@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      height: 100%;
+     /* Replace this: background-color: #d000f7; */
+      background: linear-gradient(-45deg, #ff00cc, #3333ff, #00ffcc,#ffcc00,#66ff66,#ffb347);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    body {
+      height: 100%;
+      font-family: 'Arial Black', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @keyframes gradientBG {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+   }
+   100% {
+    background-position: 0% 50%;
+   }
+    }
+
+    .main-box {
+      border: 4px solid black;
+      padding: 30px;
+      text-align: center;
+      max-width: 90%;
+      border-radius: 10px;
+    }
+    .countdown {
+      background: white;
+      color: #00aaff;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-box">
+    <h1>The website owner is in the process of create this website</h1><br>
+    <h4>Release date with this website</h4>
+    <div class="countdown" id="countdown">
+      Loading...
+    </div>
+  </div>
+
+  <div class="footer">Website is Designed by X.N.O.R 2026</div>
+
+  <script>
+    const targetDate = new Date("2026-01-01T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "0 days 0 hours 0 minutes 0 seconds";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}D ${hours}H ${minutes}Min ${seconds}Sec`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
