@@ -184,11 +184,14 @@ nav {
   gap: 4rem;
 }
 
-.header__image img {
+.header__image img {  
+  background-color: white;
+  max-width: 400px;  
+  margin: auto;  
+  border-radius: 20%; 
+  padding: 5px;
   max-width: 400px;
-  margin: auto;
-  border-radius: 20%;
-}
+} 
 
 .header__content {
   text-align: center;
