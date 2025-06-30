@@ -44,17 +44,17 @@ ScrollReveal().reveal(".header__content h4", {
 
 ScrollReveal().reveal(".header__content h1", {
   ...scrollRevealOption,
-  delay: 1000,
+  delay: 500,
 });
 
 ScrollReveal().reveal(".header__content p", {
   ...scrollRevealOption,
-  delay: 1500,
+  delay: 500,
 });
 
 ScrollReveal().reveal(".header__content .btn", {
   ...scrollRevealOption,
-  delay: 2000,
+  delay: 500,
 });
 
 // about container
@@ -70,17 +70,17 @@ ScrollReveal().reveal(".about__content .section__header", {
 
 ScrollReveal().reveal(".about__content p", {
   ...scrollRevealOption,
-  delay: 1000,
+  delay: 500,
 });
 
 ScrollReveal().reveal(".about__content h4", {
   ...scrollRevealOption,
-  delay: 1500,
+  delay: 500,
 });
 
 ScrollReveal().reveal(".about__btns", {
   ...scrollRevealOption,
-  delay: 2000,
+  delay: 500,
 });
 
 // service container
