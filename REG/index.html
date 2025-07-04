@@ -19,27 +19,27 @@
                     <div class="fields">
                         <div class="input-fields">
                             <label>First Name</label>
-                            <input type="text" placeholder="Enter your First Name" required>
+                            <input type="text" id="fn" placeholder="Enter your First Name" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Second Name</label>
-                            <input type="text" placeholder="Enter your Second Name" required>
+                            <input type="text" id="sn" placeholder="Enter your Second Name" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Date of Birth</label>
-                            <input type="date" placeholder="Enter your Date of Birth" required>
+                            <input type="date" id="dob" placeholder="Enter your Date of Birth" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Whatsapp Number</label>
-                            <input type="text" placeholder="Enter your Whatsapp Number" required>
+                            <input type="text" id="wn" placeholder="Enter your Whatsapp Number" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Gender</label>
-                            <select name="gender" required>
+                            <select name="gender" id="g" required>
                                 <option value="" disabled selected>Select Your Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -48,7 +48,11 @@
 
                         <div class="input-fields">
                             <label>Country</label>
-                            <input type="text" placeholder="Enter your Country" required>
+                            <select name="country" id="c" required>
+                                <option value="" disabled selected>Select Your Country</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -59,7 +63,7 @@
                     <div class="fields">
                         <div class="input-fields">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
@@ -69,12 +73,12 @@
 
                         <div class="input-fields">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Mobile Number</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
@@ -84,7 +88,7 @@
 
                         <div class="input-fields">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
                     </div>
                     <button class="nextBtn">
@@ -101,7 +105,7 @@
                     <div class="fields">
                         <div class="input-fields">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
@@ -111,12 +115,12 @@
 
                         <div class="input-fields">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Mobile Number</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
@@ -126,7 +130,7 @@
 
                         <div class="input-fields">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
                     </div>
                 </div>
@@ -137,7 +141,7 @@
                     <div class="fields">
                         <div class="input-fields">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
@@ -147,12 +151,12 @@
 
                         <div class="input-fields">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
                             <label>Mobile Number</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-fields">
@@ -162,7 +166,7 @@
 
                         <div class="input-fields">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" id="" placeholder="Enter your name" required>
                         </div>
                     </div>
                     <div class="buttons">
@@ -171,7 +175,7 @@
                         <i class="uil uil-navigator"></i>
                     </div>
 
-                    <button class="submit">
+                    <button class="submit" onclick="sendToWhatsApp(); sendToGoogleSheet();">
                         <span class="submit">Submit</span>
                         <i class="uil uil-navigator"></i>
                     </button>
@@ -181,5 +185,51 @@
         </form>
     </div>
     <script src="scrpit.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const firstName = document.getElementById('fn').value;
+            const secondName = document.getElementById('sn').value;
+            const birthday = document.getElementById('dob').value;
+            const gender = document.getElementById('g').value;
+            const country = document.getElementById('c').value;
+            const phoneNumber = "94703090240";
+            const message = `Hello! Here's My Information 📥:%0A%0A* First Name: ${firstName}%0A* Second Name: ${secondName}%0A* Birthday: ${birthday}%0A* Gender: ${gender}%0A* Country: ${country}%0A%0A> *Powerd By X.N.O.R Website 🌐*`;
+            const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+    
+    <script>
+        function sendToGoogleSheet() {
+            const fn = document.getElementById('fn').value;
+            const sn = document.getElementById('sn').value;
+            const dob = document.getElementById('dob').value;
+            const wn = document.getElementById('wn').value;
+	    const g = document.getElementById('g').value;
+	    const c = document.getElementById('c').value;
+            const googleSheetWebAppURL = "https://script.google.com/macros/s/AKfycbyU9Y27lBsYPCeUIDlzeYfn46QB6GVqeug5AgvqEDX4RcwU2K1sFrMXykxJOEsp0MWf/exec"; // Replace with the URL you copied
+    
+            const formData = new FormData();
+            formData.append('fn', fn);
+            formData.append('sn', sn);
+            formData.append('dob', dob);
+            formData.append('wn', wn);
+	    formData.append('g', g);
+    
+            fetch(googleSheetWebAppURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // To prevent potential CORS issues
+            })
+            .then(response => {
+                console.log('Data sent to Google Sheet successfully!');
+                // Optionally, you can add code here to show a success message to the user
+            })
+            .catch(error => {
+                console.error('Error sending data to Google Sheet:', error);
+                // Optionally, you can add code here to show an error message to the user
+            });
+        }
+    </script>
 </body>
 </html>
