@@ -29,7 +29,7 @@ const swiper = new Swiper(".swiper", {
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
-  duration: 1000,
+  duration: 500,
 };
 
 // header container
@@ -85,7 +85,7 @@ ScrollReveal().reveal(".about__btns", {
 
 // service container
 ScrollReveal().reveal(".service__card", {
-  duration: 1000,
+  duration: 500,
   interval: 500,
 });
 
