@@ -64,12 +64,6 @@ img {
   width: 100%;
 }
 
-iframe {
-  display: flex;
-  width: 100%;
-  height: 125%;
-}
-
 a {
   text-decoration: none;
   color: var(--white);
@@ -708,4 +702,5 @@ nav {
   .blog__grid {
     gap: 2rem;
   }
-}
+  }
+        
