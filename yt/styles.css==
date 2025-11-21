@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Theme variables */
+:root {
+  --primary-color: #f8f208;
+  --primary-color-dark: #ee9821;
+  --secondary-color: #03060f;
+  --secondary-color-light: #0f1221;
+  --secondary-color-dark: #03060f;
+  --text-light: #94a3b8;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --gradient: linear-gradient(
+    to right,
+    var(--primary-color-dark),
+    var(--primary-color)
+  );
+}
+
+/* Reset / globals */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  background-color: var(--secondary-color);
+}
+
+/* Generic elements */
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Section container (used by the main section) */
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+/* Section header */
+.section__header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Re-usable button class (used on the nav link and elsewhere) */
+.btn {
+  padding: 0.5rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  background-image: var(--gradient);
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+/* Header / navigation */
+.header {
+  position: relative;
+  background-color: var(--secondary-color-dark);
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__bar {
+  position: relative;
+  isolation: isolate;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+}
+
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Mobile menu button */
+.nav__menu__btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile nav links (collapsed by default) */
+.nav__links {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  transform: translateY(-100%);
+  background-color: var(--secondary-color-light);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+/* When JS toggles the menu open */
+.nav__links.open {
+  transform: translateY(0);
+}
+
+/* Nav link styling */
+.link a {
+  transition: 0.3s;
+}
+
+.link.btn a {
+  color: var(--secondary-color) !important;
+}
+
+.link a:hover {
+  color: var(--primary-color-dark);
+}
+
+/* Project (video) grid and cards */
+.project__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Each card */
+.project__card {
+  background: transparent; /* preserve layout, keep visual minimal */
+}
+
+/* Card image styling */
+.project__card img {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--secondary-color-dark);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Medium-small screens: two columns for project grid where appropriate */
+@media (width > 480px) {
+  .project__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop/tablet: show full nav, hide mobile menu button, and 3-column project grid */
+@media (width > 768px) {
+  nav {
+    position: static;
+  }
+
+  .nav__bar {
+    padding: 2rem 1rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .project__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+/* Optional: nice, bold heading base */
+.wild-h3 {
+  font-family:"Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-block;
+
+  /* The animation magic */
+  animation:
+    colorCycle 2s linear infinite,
+    wiggle 1.4s ease-in-out infinite alternate;
+
+  /* Make the color pop with a glow that follows currentColor */
+  filter: drop-shadow(0 0 10px currentColor);
+  will-change: color, transform;
+}
+
+/* Color sequence: red → orange → green → blue */
+@keyframes colorCycle {
+  0% { color: #ff00cc; }
+  25% { color: #3333ff; }
+  50% { color: #00ffcc; }
+  75% { color: #66ff66; }
+  100% { color: #ffb347; }
+}
+
+/* “Wild shifting” motion: tilt + stretch + bounce */
+@keyframes wiggle {
+  0% { transform: translateY(0) rotate(0deg) scale(1) skew(0deg, 0deg); letter-spacing: 0.06em; }
+  25% { transform: translateY(-2px) rotate(-2deg) scale(1.04) skew(-2deg, 0deg); letter-spacing: 0.08em; }
+  50% { transform: translateY(0) rotate(2deg) scale(1.02) skew(2deg, 0deg); letter-spacing: 0.07em; }
+  75% { transform: translateY(2px) rotate(-1deg) scale(1.03) skew(-1deg, 0deg); letter-spacing: 0.09em; }
+  100% { transform: translateY(0) rotate(0deg) scale(1) skew(0deg, 0deg); letter-spacing: 0.06em; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .wild-h3 {
+    animation: colorCycle 6s linear infinite;
+    transform: none;
+    filter: none;
+  }
+}
