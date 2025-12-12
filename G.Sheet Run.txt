@@ -3,19 +3,16 @@ function doPost(e) {
   var sheet = ss.getActiveSheet();
 
   var firstName = e.parameter.firstName;
-  var lastName = e.parameter.lastName;
-  var location = e.parameter.location;
+  var secondName = e.parameter.secondName;
   var birthday = e.parameter.birthday;
+  var whatsappNumber = e.parameter.whatsappNumber;
+  var gender = e.parameter.gender;
+  var country = e.parameter.country;
+  var channel = e.parameter.channel;
+  var content = e.parameter.content;
   var timestamp = new Date();
 
-  sheet.appendRow([firstName, lastName, location, birthday, timestamp]);
+  sheet.appendRow([firstName, secondName, birthday, whatsappNumber, gender, country, channel, content, timestamp]);
 
   return ContentService.createTextOutput("Success: Data received and added to the sheet");
 }
-
-
-First Name
-Last Name
-Location
-Birthday
-F/R Time
