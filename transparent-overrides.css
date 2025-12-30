@@ -1,0 +1,197 @@
+/* Transparent Background Overrides - Add this to your custom CSS file */
+
+/* Header section container - make it transparent */
+.header{
+  background-color: transparent; /* Fully transparent */
+  /* OR glass effect (optional) */
+  background-color: rgba(15, 18, 33, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Banner cards - fully transparent or glass effect */
+.banner__card {
+  background-color: transparent; /* Fully transparent */
+  /* OR use glassmorphism effect (optional - recommended for beauty) */
+  background-color: rgba(15, 18, 33, 0.4); /* Dark semi-transparent */
+/*backdrop-filter: blur(8px);*/
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Service cards - transparent */
+.service__card {
+  background-color: transparent; /* Fully transparent */
+  /* OR glass effect (optional) */
+  background-color: rgba(15, 18, 33, 0.4);
+/*backdrop-filter: blur(8px);*/
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer - full transparent */
+.footer {
+  background-color: transparent; /* Fully transparent */
+  /* OR use glassmorphism effect (optional - recommended for beauty) */
+  background-color: rgba(15, 18, 33, 0.4); /* Dark semi-transparent */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer container inside */
+.footer__container {
+  background-color: transparent;
+}
+
+/* Optional: Make other section containers transparent if needed */
+.section__container {
+  background-color: transparent;
+}
+
+/* Project section (video grid area) - if you want the pattern visible behind videos */
+.project__container {
+  background-color: transparent;
+}
+
+/* Extra: If you want text to be more readable on animated background */
+.banner__card h4,
+.banner__card p,
+.service__card h4,
+.service__card p,
+.footer__col p,
+.footer__col a,
+.section__description,
+.header__content p {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Improves readability */
+  color: #ffffff;
+}
+
+.footer__bar {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Improves readability */
+}
+
+/* New Project Card Style - Thumbnail + Title + Play Button (Glass Effect) */
+
+.project__container {
+  background-color: transparent;
+}
+
+.project__grid {
+  background-color: transparent;
+  gap: 2rem;
+}
+
+.project__card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(4, 9, 29, 0.3);           /* Dark glass background */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(248, 249, 6, 0.2);        /* Subtle yellow border */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.project__card:hover {
+  transform: translateY(-12px) scale(1.03);
+  background-color: rgba(4, 9, 29, 0.5);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(248, 249, 6, 0.15);
+}
+
+.project__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project__thumb {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.project__thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project__card:hover .project__thumb img {
+  transform: scale(1.1);
+}
+
+/* Play Icon Overlay on Thumbnail */
+.project__play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(248, 249, 6, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--secondary-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.project__card:hover .project__play-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.project__card h4 {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ffffff;
+  min-height: 3.2em; /* Optional: same height for titles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project__play-btn {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  background-image: var(--gradient);
+  border-radius: 5rem;
+  transition: all 0.3s ease;
+}
+
+.project__play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(248, 249, 6, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project__card h4 {
+    font-size: 1rem;
+    min-height: auto;
+  }
+  
+  .project__play-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+}

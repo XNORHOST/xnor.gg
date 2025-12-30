@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X.N.O.R Registration - Join Community</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+<style>
+  /* === Transparent Glass Design for Registration Page === */
+  :root {
+    --primary: #f8f208;
+    --primary-dark: #ee9821;
+    --bg: #04091d;
+    --dark: #0f1221;
+    --light: #94a3b8;
+    --white: #ffffff;
+    --glass-bg: rgba(4, 9, 29, 0.35);     /* Dark semi-transparent glass */
+    --glass-border: rgba(248, 249, 6, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Animated background from main site will now show through */
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* Main Registration Section - Transparent Glass Container */
+  .reg-section {
+    min-height: 100vh;
+    padding: 120px 1rem 4rem;
+    text-align: center;
+    background-color: transparent; /* Fully transparent */
+    position: relative;
+    z-index: 1;
+  }
+
+  .section__subheader {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(248, 249, 6, 0.3);
+  }
+
+  .section__header {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section__description {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--light);
+    font-size: 1.1rem;
+  }
+
+  /* Form Container - Glass Card Effect */
+  .reg-form {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 15px 35px var(--glass-shadow);
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  .input-row {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .input-row { 
+      grid-template-columns: 1fr 1fr; 
+    }
+  }
+
+  input, select {
+    width: 100%;
+    padding: 1.1rem;
+    background: rgba(15, 18, 33, 0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(15, 18, 33, 0.7);
+    box-shadow: 0 0 15px rgba(248, 249, 8, 0.4);
+    transform: translateY(-3px);
+  }
+
+  input::placeholder {
+    color: var(--light);
+  }
+
+  select option {
+    background: var(--dark);
+    color: var(--white);
+  }
+
+  .hidden { display: none !important; }
+  .other-input { margin-top: 1rem; }
+
+  /* Submit Button - Matching Main Site Style */
+  .btn1 {
+    padding: 1.1rem 3rem;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 1rem;
+    box-shadow: 0 8px 20px rgba(248, 249, 6, 0.3);
+  }
+
+  .btn1:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(248, 249, 6, 0.5);
+  }
+
+  /* Responsive Nav Fix (already in your code) */
+  @media (min-width: 768px) {
+    .nav__links {
+      position: static;
+      transform: none;
+      display: flex;
+      gap: 2rem;
+      background: none;
+      padding: 0;
+    }
+    .nav__menu__btn { display: none; }
+    .header__socials { display: flex; }
+  }
+
+  /* Footer - full transparent */
+.footer {
+  background-color: transparent; /* Fully transparent */
+  /* OR use glassmorphism effect (optional - recommended for beauty) */
+  background-color: rgba(15, 18, 33, 0.4); /* Dark semi-transparent */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer__col p,
+.footer__col a {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Improves readability */
+  color: #ffffff;
+}
+
+.footer__bar {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Improves readability */
+}
+
+
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="nav__header">
+            <div class="nav__logo">
+              <a href="#">X.N.O.R Website</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+              <span><i class="ri-menu-3-line"></i></span>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li class="link"><a href="../#home">Home</a></li>
+      <!--  <li class="link"><a href="../#about">About</a></li> -->
+            <li class="link"><a href="../#project">Video</a></li>
+            <li class="link"><a href="../#service">Services</a></li>
+      <!--  <li class="link"><a href="../#blog">Application</a></li> -->
+            <li class="link btn"><a href="registration.html">Registration</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+  <!-- Registration Form -->
+  <section class="reg-section">
+    <p class="section__subheader">X.N.O.R Community Registration</p>
+    <h2 class="section__header">Join the Army Today!</h2>
+    <p class="section__description">
+      Fill your details and tell me which content you love the most!
+    </p>
+
+    <form class="reg-form" id="regForm">
+      <div class="input-row">
+        <input type="text" id="firstName" placeholder="First Name" required />
+        <input type="text" id="lastName" placeholder="Last Name" required />
+      </div>
+
+      <input type="text" id="birthday" placeholder="Birthday (e.g. 2005-03-15)" required />
+
+      <div class="input-row">
+        <input type="tel" id="whatsapp" placeholder="WhatsApp Number (9477xxxxxxx)" required />
+        <select id="gender" required>
+          <option value="" disabled selected>Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+     <select id="country" required>
+  <option value="" disabled selected>Select Your Country</option>
+  <option value="AF">Afghanistan</option>
+  <option value="AX">Åland Islands</option>
+  <option value="AL">Albania</option>
+  <option value="DZ">Algeria</option>
+  <option value="AS">American Samoa</option>
+  <option value="AD">Andorra</option>
+  <option value="AO">Angola</option>
+  <option value="AI">Anguilla</option>
+  <option value="AQ">Antarctica</option>
+  <option value="AG">Antigua and Barbuda</option>
+  <option value="AR">Argentina</option>
+  <option value="AM">Armenia</option>
+  <option value="AW">Aruba</option>
+  <option value="AU">Australia</option>
+  <option value="AT">Austria</option>
+  <option value="AZ">Azerbaijan</option>
+  <option value="BS">Bahamas</option>
+  <option value="BH">Bahrain</option>
+  <option value="BD">Bangladesh</option>
+  <option value="BB">Barbados</option>
+  <option value="BY">Belarus</option>
+  <option value="BE">Belgium</option>
+  <option value="BZ">Belize</option>
+  <option value="BJ">Benin</option>
+  <option value="BM">Bermuda</option>
+  <option value="BT">Bhutan</option>
+  <option value="BO">Bolivia</option>
+  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+  <option value="BA">Bosnia and Herzegovina</option>
+  <option value="BW">Botswana</option>
+  <option value="BV">Bouvet Island</option>
+  <option value="BR">Brazil</option>
+  <option value="IO">British Indian Ocean Territory</option>
+  <option value="BN">Brunei Darussalam</option>
+  <option value="BG">Bulgaria</option>
+  <option value="BF">Burkina Faso</option>
+  <option value="BI">Burundi</option>
+  <option value="CV">Cabo Verde</option>
+  <option value="KH">Cambodia</option>
+  <option value="CM">Cameroon</option>
+  <option value="CA">Canada</option>
+  <option value="KY">Cayman Islands</option>
+  <option value="CF">Central African Republic</option>
+  <option value="TD">Chad</option>
+  <option value="CL">Chile</option>
+  <option value="CN">China</option>
+  <option value="CX">Christmas Island</option>
+  <option value="CC">Cocos (Keeling) Islands</option>
+  <option value="CO">Colombia</option>
+  <option value="KM">Comoros</option>
+  <option value="CD">Congo (Democratic Republic)</option>
+  <option value="CG">Congo</option>
+  <option value="CK">Cook Islands</option>
+  <option value="CR">Costa Rica</option>
+  <option value="HR">Croatia</option>
+  <option value="CU">Cuba</option>
+  <option value="CW">Curaçao</option>
+  <option value="CY">Cyprus</option>
+  <option value="CZ">Czechia</option>
+  <option value="DK">Denmark</option>
+  <option value="DJ">Djibouti</option>
+  <option value="DM">Dominica</option>
+  <option value="DO">Dominican Republic</option>
+  <option value="EC">Ecuador</option>
+  <option value="EG">Egypt</option>
+  <option value="SV">El Salvador</option>
+  <option value="GQ">Equatorial Guinea</option>
+  <option value="ER">Eritrea</option>
+  <option value="EE">Estonia</option>
+  <option value="SZ">Eswatini</option>
+  <option value="ET">Ethiopia</option>
+  <option value="FK">Falkland Islands</option>
+  <option value="FO">Faroe Islands</option>
+  <option value="FJ">Fiji</option>
+  <option value="FI">Finland</option>
+  <option value="FR">France</option>
+  <option value="GF">French Guiana</option>
+  <option value="PF">French Polynesia</option>
+  <option value="TF">French Southern Territories</option>
+  <option value="GA">Gabon</option>
+  <option value="GM">Gambia</option>
+  <option value="GE">Georgia</option>
+  <option value="DE">Germany</option>
+  <option value="GH">Ghana</option>
+  <option value="GI">Gibraltar</option>
+  <option value="GR">Greece</option>
+  <option value="GL">Greenland</option>
+  <option value="GD">Grenada</option>
+  <option value="GP">Guadeloupe</option>
+  <option value="GU">Guam</option>
+  <option value="GT">Guatemala</option>
+  <option value="GG">Guernsey</option>
+  <option value="GN">Guinea</option>
+  <option value="GW">Guinea-Bissau</option>
+  <option value="GY">Guyana</option>
+  <option value="HT">Haiti</option>
+  <option value="HM">Heard Island and McDonald Islands</option>
+  <option value="VA">Holy See</option>
+  <option value="HN">Honduras</option>
+  <option value="HK">Hong Kong</option>
+  <option value="HU">Hungary</option>
+  <option value="IS">Iceland</option>
+  <option value="IN">India</option>
+  <option value="ID">Indonesia</option>
+  <option value="IR">Iran</option>
+  <option value="IQ">Iraq</option>
+  <option value="IE">Ireland</option>
+  <option value="IM">Isle of Man</option>
+  <option value="IL">Israel</option>
+  <option value="IT">Italy</option>
+  <option value="JM">Jamaica</option>
+  <option value="JP">Japan</option>
+  <option value="JE">Jersey</option>
+  <option value="JO">Jordan</option>
+  <option value="KZ">Kazakhstan</option>
+  <option value="KE">Kenya</option>
+  <option value="KI">Kiribati</option>
+  <option value="KP">Korea (North)</option>
+  <option value="KR">Korea (South)</option>
+  <option value="KW">Kuwait</option>
+  <option value="KG">Kyrgyzstan</option>
+  <option value="LA">Lao People's Democratic Republic</option>
+  <option value="LV">Latvia</option>
+  <option value="LB">Lebanon</option>
+  <option value="LS">Lesotho</option>
+  <option value="LR">Liberia</option>
+  <option value="LY">Libya</option>
+  <option value="LI">Liechtenstein</option>
+  <option value="LT">Lithuania</option>
+  <option value="LU">Luxembourg</option>
+  <option value="MO">Macao</option>
+  <option value="MG">Madagascar</option>
+  <option value="MW">Malawi</option>
+  <option value="MY">Malaysia</option>
+  <option value="MV">Maldives</option>
+  <option value="ML">Mali</option>
+  <option value="MT">Malta</option>
+  <option value="MH">Marshall Islands</option>
+  <option value="MQ">Martinique</option>
+  <option value="MR">Mauritania</option>
+  <option value="MU">Mauritius</option>
+  <option value="YT">Mayotte</option>
+  <option value="MX">Mexico</option>
+  <option value="FM">Micronesia</option>
+  <option value="MD">Moldova</option>
+  <option value="MC">Monaco</option>
+  <option value="MN">Mongolia</option>
+  <option value="ME">Montenegro</option>
+  <option value="MS">Montserrat</option>
+  <option value="MA">Morocco</option>
+  <option value="MZ">Mozambique</option>
+  <option value="MM">Myanmar</option>
+  <option value="NA">Namibia</option>
+  <option value="NR">Nauru</option>
+  <option value="NP">Nepal</option>
+  <option value="NL">Netherlands</option>
+  <option value="NC">New Caledonia</option>
+  <option value="NZ">New Zealand</option>
+  <option value="NI">Nicaragua</option>
+  <option value="NE">Niger</option>
+  <option value="NG">Nigeria</option>
+  <option value="NU">Niue</option>
+  <option value="NF">Norfolk Island</option>
+  <option value="MK">North Macedonia</option>
+  <option value="MP">Northern Mariana Islands</option>
+  <option value="NO">Norway</option>
+  <option value="OM">Oman</option>
+  <option value="PK">Pakistan</option>
+  <option value="PW">Palau</option>
+  <option value="PS">Palestine</option>
+  <option value="PA">Panama</option>
+  <option value="PG">Papua New Guinea</option>
+  <option value="PY">Paraguay</option>
+  <option value="PE">Peru</option>
+  <option value="PH">Philippines</option>
+  <option value="PN">Pitcairn</option>
+  <option value="PL">Poland</option>
+  <option value="PT">Portugal</option>
+  <option value="PR">Puerto Rico</option>
+  <option value="QA">Qatar</option>
+  <option value="RE">Réunion</option>
+  <option value="RO">Romania</option>
+  <option value="RU">Russian Federation</option>
+  <option value="RW">Rwanda</option>
+  <option value="BL">Saint Barthélemy</option>
+  <option value="SH">Saint Helena</option>
+  <option value="KN">Saint Kitts and Nevis</option>
+  <option value="LC">Saint Lucia</option>
+  <option value="MF">Saint Martin (French part)</option>
+  <option value="PM">Saint Pierre and Miquelon</option>
+  <option value="VC">Saint Vincent and the Grenadines</option>
+  <option value="WS">Samoa</option>
+  <option value="SM">San Marino</option>
+  <option value="ST">Sao Tome and Principe</option>
+  <option value="SA">Saudi Arabia</option>
+  <option value="SN">Senegal</option>
+  <option value="RS">Serbia</option>
+  <option value="SC">Seychelles</option>
+  <option value="SL">Sierra Leone</option>
+  <option value="SG">Singapore</option>
+  <option value="SX">Sint Maarten (Dutch part)</option>
+  <option value="SK">Slovakia</option>
+  <option value="SI">Slovenia</option>
+  <option value="SB">Solomon Islands</option>
+  <option value="SO">Somalia</option>
+  <option value="ZA">South Africa</option>
+  <option value="GS">South Georgia and the South Sandwich Islands</option>
+  <option value="SS">South Sudan</option>
+  <option value="ES">Spain</option>
+  <option value="LK">Sri Lanka</option>
+  <option value="SD">Sudan</option>
+  <option value="SR">Suriname</option>
+  <option value="SJ">Svalbard and Jan Mayen</option>
+  <option value="SE">Sweden</option>
+  <option value="CH">Switzerland</option>
+  <option value="SY">Syrian Arab Republic</option>
+  <option value="TW">Taiwan</option>
+  <option value="TJ">Tajikistan</option>
+  <option value="TZ">Tanzania</option>
+  <option value="TH">Thailand</option>
+  <option value="TL">Timor-Leste</option>
+  <option value="TG">Togo</option>
+  <option value="TK">Tokelau</option>
+  <option value="TO">Tonga</option>
+  <option value="TT">Trinidad and Tobago</option>
+  <option value="TN">Tunisia</option>
+  <option value="TR">Turkey</option>
+  <option value="TM">Turkmenistan</option>
+  <option value="TC">Turks and Caicos Islands</option>
+  <option value="TV">Tuvalu</option>
+  <option value="UG">Uganda</option>
+  <option value="UA">Ukraine</option>
+  <option value="AE">United Arab Emirates</option>
+  <option value="GB">United Kingdom</option>
+  <option value="US">United States</option>
+  <option value="UM">United States Minor Outlying Islands</option>
+  <option value="UY">Uruguay</option>
+  <option value="UZ">Uzbekistan</option>
+  <option value="VU">Vanuatu</option>
+  <option value="VE">Venezuela</option>
+  <option value="VN">Viet Nam</option>
+  <option value="VG">Virgin Islands (British)</option>
+  <option value="VI">Virgin Islands (U.S.)</option>
+  <option value="WF">Wallis and Futuna</option>
+  <option value="EH">Western Sahara</option>
+  <option value="YE">Yemen</option>
+  <option value="ZM">Zambia</option>
+  <option value="ZW">Zimbabwe</option>
+</select>
+
+      <select id="channel" required onchange="updateContentOptions()">
+        <option value="" disabled selected>Select your favorite channel</option>
+        <option value="gaming">Gaming YouTube (@x.nor10)</option>
+        <option value="education">Education YouTube (@x.nor11)</option>
+        <option value="music">Music YouTube (@x.nor12)</option>
+      </select>
+
+      <select id="content" required onchange="toggleOtherInput()">
+        <option value="" disabled selected>First select a channel</option>
+      </select>
+
+      <div id="otherContainer" class="other-input hidden">
+        <input type="text" id="otherContent" placeholder="Type your favorite content here..." />
+      </div>
+
+      <button type="button" class="btn1" onclick="submitForm()">Submit & Join via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h5><a href="#">X.N.O.R</a></h5>
+          <p>
+            I'm a dedicated web developer with a creative flair and a penchant
+            for turning lines of code into captivating online experiences.
+          </p>
+          <div class="footer__socials">
+            <a href="https://youtube.com/@x.nor10"><i class="ri-youtube-fill"></i></a>
+            <a href="https://www.facebook.com/xnor.gg"><i class="ri-facebook-box-fill"></i></a>
+            <a href="https://www.instagram.com/xnor.gg"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.tiktok.com/@x.nor10t"><i class="ri-tiktok-fill"></i></a>
+            <a href="https://wa.me/message/J54EXW4S2NS7D1"><i class=" ri-whatsapp-line"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>My Services</h4>
+          <div class="footer__links">
+            <a href="#">Website Design</a>
+            <a href="#">Android Application Create</a>
+            <a href="#">Mobile & Computer Repair</a>
+          </div>
+        </div>
+        <!-- <div class="footer__col">
+          <h4>Support</h4>
+          <div class="footer__links">
+            <a href="#contact">Contact</a>
+            <a href="#blog">My Blog</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div> -->
+      </div>
+      <hr>
+      <div class="footer__bar">
+        Web Design By X.N.O.R/Enjoy Watching with the Website<br>2026
+      </div>
+    </footer>
+
+  <script>
+  
+  // Mobile Menu Toggle - Fixed & Reliable Version
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
+  const menuIcon = menuBtn ? menuBtn.querySelector('i') : null;
+
+  if (menuBtn && navLinks && menuIcon) {
+    menuBtn.addEventListener('click', () => {
+      // Toggle the menu open/close
+      navLinks.classList.toggle('open');
+
+      // Safely change icon
+      if (navLinks.classList.contains('open')) {
+        menuIcon.classList.remove('ri-menu-3-line');
+        menuIcon.classList.add('ri-close-line');
+      } else {
+        menuIcon.classList.remove('ri-close-line');
+        menuIcon.classList.add('ri-menu-3-line');
+      }
+    });
+
+    // Optional: Close menu when clicking a link (better UX on mobile)
+    navLinks.querySelectorAll('.link a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuIcon.classList.remove('ri-close-line');
+        menuIcon.classList.add('ri-menu-3-line');
+      });
+    });
+  } else {
+    console.warn("Mobile menu elements not found. Check IDs: menu-btn, nav-links, and icon inside menu-btn.");
+  }
+
+
+  // Content Options for Favorite Content Dropdown
+  const contentOptions = {
+    gaming: ["Call of Duty Mobile", "Free Fire", "PUBG Mobile", "Clash of Clans", "Minecraft", "Other"],
+    education: ["Coding & ICT", "WhatsApp Bot", "Termux", "Ethical Hacking", "Python", "Other"],
+    music: ["Sinhala Slowed", "Phonk Music", "Sinhala Rap", "Tamil Songs", "English Remixes", "Other"]
+  };
+
+  function updateContentOptions() {
+    const channel = document.getElementById("channel").value;
+    const content = document.getElementById("content");
+    const otherContainer = document.getElementById("otherContainer");
+    
+    content.innerHTML = '<option value="" disabled selected>Select content</option>';
+    otherContainer.classList.add("hidden");
+
+    if (channel && contentOptions[channel]) {
+      contentOptions[channel].forEach(item => {
+        const opt = document.createElement("option");
+        opt.value = item;
+        opt.textContent = item;
+        content.appendChild(opt);
+      });
+    }
+  }
+
+  function toggleOtherInput() {
+    const contentValue = document.getElementById("content").value;
+    const otherContainer = document.getElementById("otherContainer");
+    otherContainer.classList.toggle("hidden", contentValue !== "Other");
+  }
+
+  // Function to standardize any date input to YYYY-MM-DD format
+  function formatDateToYYYYMMDD(inputDate) {
+    if (!inputDate) return "";
+
+    // Remove any whitespace
+    let dateStr = inputDate.trim();
+
+    // Try to parse with JavaScript Date (handles most common formats)
+    let date = new Date(dateStr);
+    if (!isNaN(date.getTime())) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+    }
+
+    // Manual parsing for common formats like DD.MM.YYYY, DD/MM/YYYY, YYYY.MM.DD etc.
+    const separators = [/[-\/.]/]; // Possible separators
+    for (let sep of separators) {
+      if (sep.test(dateStr)) {
+        const parts = dateStr.split(sep);
+        if (parts.length === 3) {
+          let [p1, p2, p3] = parts.map(p => parseInt(p, 10));
+
+          // Detect format: DD-MM-YYYY, DD/MM/YYYY, DD.MM.YYYY
+          if (p1 > 31) {
+            // Likely YYYY-...
+            return `\( {p1}- \){String(p2).padStart(2, '0')}-${String(p3).padStart(2, '0')}`;
+          } else if (p3 > 31) {
+            // Likely DD-MM-YYYY
+            return `\( {p3}- \){String(p2).padStart(2, '0')}-${String(p1).padStart(2, '0')}`;
+          } else if (p2 > 12) {
+            // Month can't be >12, so likely YYYY-MM-DD already
+            return `\( {p1}- \){String(p2).padStart(2, '0')}-${String(p3).padStart(2, '0')}`;
+          } else {
+            // Assume DD-MM-YYYY
+            return `\( {p3}- \){String(p2).padStart(2, '0')}-${String(p1).padStart(2, '0')}`;
+          }
+        }
+      }
+    }
+    return inputDate; // Fallback: return as is if can't parse
+  }
+
+  // Submit Form Function
+  function submitForm() {
+    // Collect form data
+    const data = {
+      firstName: document.getElementById("firstName").value.trim(),
+      secondName: document.getElementById("lastName").value.trim(),
+      birthday: formatDateToYYYYMMDD(document.getElementById("birthday").value), // Standardized
+      whatsappNumber: document.getElementById("whatsapp").value.trim(),
+      gender: document.getElementById("gender").value,
+      country: document.getElementById("country").value,
+      channel: document.getElementById("channel").options[document.getElementById("channel").selectedIndex].text,
+      content: document.getElementById("content").value === "Other"
+        ? document.getElementById("otherContent").value.trim()
+        : document.getElementById("content").value
+    };
+
+    // Validation
+    if (!data.firstName || !data.secondName || !data.birthday || !data.whatsappNumber || !data.gender || !data.country || !data.channel || !data.content) {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    // WhatsApp Message
+    const waMessage = encodeURIComponent(
+      `*🔔 New X.N.O.R Army Member!* 🏆\n\n` +
+      `👤 *Name:* ${data.firstName} ${data.secondName}\n` +
+      `🎂 *Birthday:* ${data.birthday}\n` +
+      `📱 *WhatsApp:* ${data.whatsappNumber}\n` +
+      `⚧ *Gender:* ${data.gender}\n` +
+      `🌍 *Country:* ${data.country}\n` +
+      `📺 *Favorite Channel:* ${data.channel}\n` +
+      `❤️ *Loves:* ${data.content}\n\n` +
+      `X.N.O.R Army is Growing Strong! 💪🔥`
+    );
+
+    // Open WhatsApp (Change 94703090240 to your number)
+    window.open(`https://wa.me/94703090240?text=${waMessage}`, '_blank');
+
+    // Send to Google Apps Script (Web App URL - Replace with your deployed URL)
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwYEmceIJyu8W9szeJoZG2iHqgXg-Vb0AHDv7iBpJd6-S4l6nOLzXJNuW6FdT9fHZ0m/exec"; // 👈 Change this!
+
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(data)
+    })
+    .then(() => {
+      alert(`Thank you ${data.firstName}! 🎉\nWelcome to the X.N.O.R Army! 💪\nYour data has been saved.`);
+      document.getElementById("regForm").reset();
+      updateContentOptions(); // Reset content dropdown
+    })
+    .catch(() => {
+      alert(`Thank you ${data.firstName}! 🎉\nWelcome to X.N.O.R Army!\n(Sheet save may have failed - but WhatsApp message sent!)`);
+      document.getElementById("regForm").reset();
+      updateContentOptions();
+    });
+  }
+</script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
